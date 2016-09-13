@@ -1,6 +1,7 @@
 var express = require('express')
 fs = require('fs')
 morgan = require('morgan')
+path = require('path');
 
 
 // This app uses the expressjs framework
