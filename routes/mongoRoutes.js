@@ -22,13 +22,13 @@ sendEmail = function(req, res){
   var transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     auth: {
-      user: 'thorasgardthunder@gmail.com',
-      pass: 'superstars'
+      user: 'cmufeedbackr@gmail.com',
+      pass: 'cmufeedbackr1'
     }
   }));
 
   var mailOptions = {
-    from: 'thorasgardthunder@gmail.com', // sender address
+    from: 'cmufeedbackr@gmail.com', // sender address
     to: 'suvrathpen@gmail.com', // list of receivers
     subject: 'Hello', // Subject line
     text: 'Hello world ?', // plaintext body
