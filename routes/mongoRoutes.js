@@ -1,7 +1,12 @@
 //include the mongo model
 var mongoModel = require('../models/mongoModel.js')
+var nodemailer = require('nodemailer')
+var smtpTransport = require('nodemailer-smtp-transport');
 
 exports.init = function(app) {
+
+  app.get('/', sendEmail)
+
   app.get('/mongo/:collection', doRead); // CRUD Retrieve
 
   app.put('/mongo/:collection', doCreate); // CRUD Create
@@ -9,6 +14,37 @@ exports.init = function(app) {
   app.post('/mongo/:collection', doUpdate); // CRUD Update
 
   app.delete('/mongo/:collection', doDelete); //CRUD Delete
+
+}
+
+sendEmail = function(req, res){
+  
+  var transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    auth: {
+      user: 'thorasgardthunder@gmail.com',
+      pass: 'superstars'
+    }
+  }));
+
+  var mailOptions = {
+    from: 'thorasgardthunder@gmail.com', // sender address
+    to: 'suvrathpen@gmail.com', // list of receivers
+    subject: 'Hello', // Subject line
+    text: 'Hello world ?', // plaintext body
+    html: '<b>Hello world ?</b>' // html body
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    //Email not sent
+    if (error) {
+        console.log(error);
+    }
+    //Yay!! Email sent
+    else {
+        console.log("email successfully sent" + info.response);
+    }
+  });
 
 }
 
