@@ -4,7 +4,10 @@
   "description": "a tool or collecting user feedback for coursework",
   "main": "server.js",
   "dependencies": {
-    "ejs-mate": "^2.3.0"
+    "ejs": "^2.5.2",
+    "ejs-mate": "^2.3.0",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
   },
   "devDependencies": {},
   "scripts": {
