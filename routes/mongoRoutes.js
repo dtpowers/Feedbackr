@@ -26,7 +26,7 @@ exports.init = function(app) {
 }
 
 generateToken = function(s){
-  token = CryptoJs.MD5(s);
+  token = CryptoJs.createHash('md5').update(s).digest('hex');
   return token;
 }
 
