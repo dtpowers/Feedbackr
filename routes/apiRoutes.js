@@ -30,7 +30,7 @@ sendEmail = function(){
       text: 'Hello world ?', // plaintext body
       html: '<b>Hello world ? ' + token + '</b>'  // html body
     };
-    mongoModel.create('tokens', {'token': token, 'email': "suvrathpen"}, 
+    mongoModel.create('tokens', {'token': token, 'email': email_list[i]}, 
     function(error, info){
       if (error) {
         console.log(error);
