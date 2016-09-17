@@ -1,4 +1,5 @@
 var User = {};
+var Token = {};
 
 //page load requirments
 $().ready(function() {
