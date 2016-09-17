@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "a tool or collecting user feedback for coursework",
   "main": "server.js",
-  "dependencies": {},
+  "dependencies": {
+    "ejs": "^2.5.2",
+    "ejs-mate": "^2.3.0",
+    "express": "^4.6.1",
+    "mongodb": "^2.2.10",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
