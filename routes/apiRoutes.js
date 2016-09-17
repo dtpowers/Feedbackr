@@ -9,12 +9,16 @@ var transporter = nodemailer.createTransport(smtpTransport({
     }
   }));
 
-exports.generateToken = function(s){
+exports.init = function(app) {
+  app.get('/', sendEmail);
+}
+
+generateToken = function(s){
   token = crypto.createHash('md5').update(s).digest('hex');
   return token;
 }
 
-exports.sendEmail = function(email_list){
+sendEmail = function(email_list){
   var mailOptions = {  
   from: 'cmufeedbackr@gmail.com', // sender address
   to: 'suvrathpen@gmail.com', // list of receivers

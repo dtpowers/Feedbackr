@@ -1,13 +1,10 @@
 //include the mongo model
 var mongoModel = require('../models/mongoModel.js')
-var apiRoutes = require('apiRoutes.js')
 var nodemailer = require('nodemailer')
 var smtpTransport = require('nodemailer-smtp-transport');
 var crypto = require('crypto');
 
 exports.init = function(app) {
-
-  app.get('/', apiRoutes.sendEmail)
 
   app.get('/mongo/:collection', doRead); // CRUD Retrieve
 
