@@ -1,6 +1,7 @@
 var nodemailer = require('nodemailer')
 var smtpTransport = require('nodemailer-smtp-transport');
 var crypto = require('crypto');
+var mongoModel = require('../models/mongoModel.js')
 var transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     auth: {
@@ -29,6 +30,15 @@ sendEmail = function(){
       text: 'Hello world ?', // plaintext body
       html: '<b>Hello world ? ' + token + '</b>'  // html body
     };
+    mongoModel.create('tokens', {'token': token, 'email': "suvrathpen"}, 
+    function(error, info){
+      if (error) {
+        console.log(error);
+      }
+      else {
+        console.log("collection successfully created" + info.response);
+      }
+    });
     transporter.sendMail(mailOptions, function (error, info) {
       //Email not sent
       if (error) {
