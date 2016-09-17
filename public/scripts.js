@@ -18,7 +18,7 @@ function logOut() {
 function logIn(username, password) {
 
   $.ajax({
-    url: "/users/?username=" + username + "&password=" + password,
+    url: "/mongo/users/?username=" + username + "&password=" + password,
     type: 'GET',
     success: function(result) {
       if (result[0]) {
@@ -53,7 +53,7 @@ function register(username, password, email) {
   //this validation should be server side
   //this has obvious security concerns and should be fixed for production
   $.ajax({
-    url: "users/?username=" + username,
+    url: "/mongo/users/?username=" + username,
     type: 'GET',
     success: function(result) {
       if (result[0]) {
@@ -62,7 +62,7 @@ function register(username, password, email) {
 
       } else {
         $.ajax({
-          url: "/users/",
+          url: "mongo/users/",
           data: tempUser,
           type: 'PUT',
           success: function(result) {
