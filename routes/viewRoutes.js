@@ -1,6 +1,5 @@
 exports.init = function(app) {
   app.get('/', home); //homepage
-
   app.get('/login', login)
   app.get('/signup', signup)
 

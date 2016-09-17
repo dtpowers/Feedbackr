@@ -3,7 +3,7 @@ var MongoClient = require('mongodb').MongoClient;
 var assert = require('assert');
 
 // Connect client to mongod instance with uri to mission-ready db
-var mongo_url = 'mongodb://localhost:27017/mission-ready';
+var mongo_url = 'mongodb://localhost:27017/feedbackr';
 
 var mongoDB;
 
