@@ -28,6 +28,7 @@ doCreate = function(req, res) {
 }
 
 
+
 doRead = function(req, res) {
   var filter = req.query.find ? JSON.parse(req.query.find) : {};
   mongoModel.read(req.params.collection, filter,

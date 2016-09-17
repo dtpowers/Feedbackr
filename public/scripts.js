@@ -51,7 +51,6 @@ function relog() {
 //add new user to db
 //before add, ensure its not a duplicate user
 function register(email, pw) {
-  console.log("fire");
   var tempUser = {};
   tempUser.email = email;
   tempUser.password = pw;
@@ -60,14 +59,17 @@ function register(email, pw) {
 
   //this validation should be server side
   //this has obvious security concerns and should be fixed for production
+  filter = 'find={"email":"' + email;
+  filter += '"}';
   $.ajax({
-    url: "/mongo/users/?email=" + email,
+    
+    url: "/mongo/users/",
+    data: filter,
     type: 'GET',
     success: function(result) {
       if (result[0]) {
         alert("that email is taken");
         return;
-
       } else {
         $.ajax({
           url: "mongo/users/",
@@ -75,7 +77,7 @@ function register(email, pw) {
           type: 'PUT',
           success: function(result) {
             logIn(email, pw);
-            console.log("Logging in...");
+            window.location.href = "dashboard";
           }
         });
       }
