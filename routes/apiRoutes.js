@@ -10,7 +10,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
   }));
 
 exports.init = function(app) {
-  app.get('/', sendEmail);
+  app.get('/email', sendEmail);
 }
 
 generateToken = function(s){

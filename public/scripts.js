@@ -12,7 +12,6 @@ function logOut() {
   location.reload();
 }
 
-
 //this function pulls the matchins user/ pass pair from the db
 //and stores them locally + in browser
 function logIn(username, password) {

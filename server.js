@@ -10,6 +10,8 @@ app = express();
 
 // Set the views directory
 app.set('views', __dirname + '/views');
+// use ejs-locals for all ejs templates:
+app.engine('ejs', engine);
 // Define the view (templating) engine
 app.set('view engine', 'ejs');
 // Define how to log events
