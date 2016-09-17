@@ -3,7 +3,7 @@ engine = require('ejs-mate')
 fs = require('fs')
 morgan = require('morgan')
 path = require('path');
-
+bodyParser = require('body-parser')
 
 // This app uses the expressjs framework
 app = express();
@@ -16,8 +16,11 @@ app.engine('ejs', engine);
 app.set('view engine', 'ejs');
 // Define how to log events
 app.use(morgan('dev'));
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }))
 
-
+// parse application/json
+app.use(bodyParser.json())
 // Handle static files
 app.use(express.static(__dirname + '/public'));
 
