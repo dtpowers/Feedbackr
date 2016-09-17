@@ -7,7 +7,8 @@
     "ejs": "^2.5.2",
     "ejs-mate": "^2.3.0",
     "morgan": "^1.7.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "express": "^4.6.1"
   },
   "devDependencies": {},
   "scripts": {
