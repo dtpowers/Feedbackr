@@ -1,1 +1,71 @@
-<h3>WOW</h3>
+<% layout('layout') -%>
+
+<div class="uk-container">
+  <div class="uk-grid">
+    <div class="uk-width-1-1">
+
+      <h3>WOW</h3>
+
+      <a href="#my-id" data-uk-modal class="uk-button">...</a>
+
+      <!-- This is the modal -->
+      <div id="my-id" class="uk-modal">
+        <div class="uk-modal-dialog">
+          <a class="uk-modal-close uk-close"></a>
+          <a href="#modal2" data-uk-modal class="uk-button">Open next modal!</a>
+        </div>
+      </div>
+
+      <div id="modal2" class="uk-modal">
+        <div class="uk-modal-dialog">
+          <a class="uk-modal-close uk-close"></a>
+          Modal #2
+        </div>
+      </div>
+
+      <hr/>
+
+
+      <a href="#new-assignment-modal" data-uk-modal class="uk-button">...</a>
+
+      <div id="new-assignment-modal" class="uk-modal">
+        <div class="uk-modal-dialog">
+          <a class="uk-modal-close uk-close"></a>
+
+          <div class="uk-modal-header">
+          </div>
+
+          <form class="uk-form uk-form-stacked">
+
+            <fieldset data-uk-margin>
+              <legend>Create a new assignment</legend>
+
+              <div class="uk-form-row">
+                <label class="uk-form-label" for="">Course Number</label>
+                <input type="text" placeholder="Wee">
+              </div>
+
+              <label class="uk-form-label" for="">Wee</label>
+              <input type="text" placeholder="Wee">
+              <input type="password" placeholder="Passport">
+              <select>
+                <option>blah</option>
+                <option>blah2</option>
+              </select>
+              <button class="uk-button">buttotnt</button>
+              <label><input type="checkbox">box</label>
+            </fieldset>
+
+          </form>
+
+          <div class="uk-modal-footer uk-text-right">
+            <a class="uk-button" href="">Cancel</a>
+            <a class="uk-button uk-button-primary" href="">Next</a>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
