@@ -14,5 +14,9 @@ function home(req, res){
 
 function login(req, res) {
   res.render('login')
-  res.render('signup')
+  
+}
+
+function signup(req, res){
+	res.render('signup')
 }
