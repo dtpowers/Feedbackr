@@ -2,6 +2,13 @@
 var mongoModel = require('../models/mongoModel.js')
 var nodemailer = require('nodemailer')
 var smtpTransport = require('nodemailer-smtp-transport');
+var transporter = nodemailer.createTransport(smtpTransport({
+    service: 'gmail',
+    auth: {
+      user: 'cmufeedbackr@gmail.com',
+      pass: 'cmufeedbackr1'
+    }
+  }));
 
 exports.init = function(app) {
 
@@ -18,14 +25,6 @@ exports.init = function(app) {
 }
 
 sendEmail = function(req, res){
-  
-  var transporter = nodemailer.createTransport(smtpTransport({
-    service: 'gmail',
-    auth: {
-      user: 'cmufeedbackr@gmail.com',
-      pass: 'cmufeedbackr1'
-    }
-  }));
 
   var mailOptions = {
     from: 'cmufeedbackr@gmail.com', // sender address
