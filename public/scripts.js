@@ -14,19 +14,19 @@ function logOut() {
 
 //this function pulls the matchins user/ pass pair from the db
 //and stores them locally + in browser
-function logIn(username, password) {
+function logIn(email, password) {
 
   $.ajax({
-    url: "/mongo/users/?username=" + username + "&password=" + password,
+    url: "/mongo/users/?email=" + email + "&password=" + password,
     type: 'GET',
     success: function(result) {
       if (result[0]) {
-        localStorage.username = result[0].username;
+        localStorage.email = result[0].email;
         localStorage.password = result[0].password;
         console.log(result[0]);
         relog();
       } else {
-        alert("That username or password is incorrect");
+        alert("That email or password is incorrect");
       }
 
     }
@@ -37,26 +37,35 @@ function logIn(username, password) {
 //for keeping credentials during a session
 //load user information on page load
 function relog() {
-  User.username = localStorage.username;
+  User.email = localStorage.email;
   User.password = localStorage.password;
 }
 
+ $("#signUpSub").click(function(e){
+  e.preventDefault();
+  email = $("#email").val();
+  pass = $("#pass").val();
+  register(email, pass);
+ });
+
 //add new user to db
 //before add, ensure its not a duplicate user
-function register(username, password, email) {
+function register(email, pw) {
+  console.log("fire");
   var tempUser = {};
-  tempUser.username = username;
-  tempUser.password = pw;
   tempUser.email = email;
+  tempUser.password = pw;
+  console.log(tempUser);
+  
 
   //this validation should be server side
   //this has obvious security concerns and should be fixed for production
   $.ajax({
-    url: "/mongo/users/?username=" + username,
+    url: "/mongo/users/?email=" + email,
     type: 'GET',
     success: function(result) {
       if (result[0]) {
-        alert("that username is taken");
+        alert("that email is taken");
         return;
 
       } else {
@@ -65,9 +74,8 @@ function register(username, password, email) {
           data: tempUser,
           type: 'PUT',
           success: function(result) {
-            logIn(username, pw);
+            logIn(email, pw);
             console.log("Logging in...");
-
           }
         });
       }
