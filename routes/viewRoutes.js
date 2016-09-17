@@ -2,6 +2,7 @@ exports.init = function(app) {
   app.get('/', home); //homepage
 
   app.get('/login', login)
+  app.get('/signup', signup)
 
 }
 
@@ -13,4 +14,5 @@ function home(req, res){
 
 function login(req, res) {
   res.render('login')
+  res.render('signup')
 }
