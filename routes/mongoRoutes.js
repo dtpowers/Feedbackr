@@ -2,6 +2,7 @@
 var mongoModel = require('../models/mongoModel.js')
 var nodemailer = require('nodemailer')
 var smtpTransport = require('nodemailer-smtp-transport');
+var CryptoJs = require('crypto-js');
 var transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     auth: {
@@ -24,26 +25,31 @@ exports.init = function(app) {
 
 }
 
-sendEmail = function(req, res){
+generateToken = function(s){
+  token = CryptoJs.MD5(s);
+  return token;
+}
 
-  var mailOptions = {
-    from: 'cmufeedbackr@gmail.com', // sender address
-    to: 'suvrathpen@gmail.com', // list of receivers
-    subject: 'Hello', // Subject line
-    text: 'Hello world ?', // plaintext body
-    html: '<b>Hello world ?</b>' // html body
-  };
-
-  transporter.sendMail(mailOptions, function (error, info) {
-    //Email not sent
-    if (error) {
-        console.log(error);
-    }
-    //Yay!! Email sent
-    else {
-        console.log("email successfully sent" + info.response);
-    }
-  });
+sendEmail = function(email_list){
+  var mailOptions = {  
+  from: 'cmufeedbackr@gmail.com', // sender address
+  to: 'suvrathpen@gmail.com', // list of receivers
+  subject: 'Hello', // Subject line
+  text: 'Hello world ?', // plaintext body
+  html: '<b>Hello world ?</b>' // html body
+};
+console.log(generateToken("suvrathpen@gmail.com"));
+console.log(typeof(generateToken("suvrathpen@gmail.com")));
+transporter.sendMail(mailOptions, function (error, info) {
+  //Email not sent
+  if (error) {
+      console.log(error);
+  }
+  //Yay!! Email sent
+  else {
+      console.log("email successfully sent" + info.response);
+  }
+});
 
 }
 
