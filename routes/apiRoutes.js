@@ -14,6 +14,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 
 exports.init = function(app) {
   app.get('/email', renderEmail);
+  app.get('/dummy', dummyEmail);
 }
 
 // generateFeedback = function(){
@@ -32,6 +33,10 @@ renderEmail = function(req, res){
 handleFiles = function(file){
   console.log("reached this function");
   console.log(file);
+}
+
+dummyEmail = function(){
+  console.log("reached dummyEmail function");
 }
 
 // var email_list = ["suvrathpen@gmail.com", "thorasgardthunder@gmail.com"]
