@@ -1,7 +1,9 @@
-var nodemailer = require('nodemailer')
+var nodemailer = require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var crypto = require('crypto');
 var mongoModel = require('../models/mongoModel.js')
+var Baby = require('babyparse');
+
 var transporter = nodemailer.createTransport(smtpTransport({
     service: 'gmail',
     auth: {
@@ -11,14 +13,29 @@ var transporter = nodemailer.createTransport(smtpTransport({
   }));
 
 exports.init = function(app) {
-  app.get('/email', sendEmail);
+  app.get('/email', renderEmail);
 }
+
+// generateFeedback = function(){
+
+// }
 
 generateToken = function(s){
   token = crypto.createHash('md5').update(s).digest('hex');
   return token;
 }
-var email_list = ["suvrathpen@gmail.com", "thorasgardthunder@gmail.com"]
+
+renderEmail = function(req, res){
+  res.render('email');
+}
+
+handleFiles = function(file){
+  console.log("reached this function");
+  console.log(file);
+}
+
+// var email_list = ["suvrathpen@gmail.com", "thorasgardthunder@gmail.com"]
+
 sendEmail = function(){
   for(i = 0; i < email_list.length; i++){
     token = generateToken(email_list[i]);
