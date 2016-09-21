@@ -40,20 +40,25 @@
             <fieldset data-uk-margin>
               <legend>Create a new assignment</legend>
 
-              <div class="uk-form-row">
-                <label class="uk-form-label" for="">Course Number</label>
-                <input type="text" placeholder="Wee">
-              </div>
+              <label class="uk-form-label" for="course-num">Course Number</label>
+              <input id="course-num" type="text" placeholder="######">
 
-              <label class="uk-form-label" for="">Wee</label>
-              <input type="text" placeholder="Wee">
-              <input type="password" placeholder="Passport">
-              <select>
-                <option>blah</option>
-                <option>blah2</option>
-              </select>
-              <button class="uk-button">buttotnt</button>
-              <label><input type="checkbox">box</label>
+              <label class="uk-form-label" for="course-name">Course Name</label>
+              <input id="course-name" type="text" placeholder="e.g. Innovation in Information Systems">
+
+              <label class="uk-form-label" for="assignment-title">Assignment Title</label>
+              <input id="assignment-title" type="text" placeholder="e.g. Prototype Peer Review">
+
+              <label class="uk-form-label" for="assignment-title">Submission Due Date</label>
+              <input type="text" data-uk-datepicker="{format:'MM/DD/YYYY'}">
+              <input type="text" data-uk-timepicker="{format:'12h'}">
+
+              <label class="uk-form-label" for="assignment-title">Feedback Due Date</label>
+
+              <label class="uk-form-label" for="assignment-title">Required Responses</label>
+
+              <label class="uk-form-label" for="assignment-title">Required Comments</label>
+
             </fieldset>
 
           </form>

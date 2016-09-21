@@ -1,5 +1,5 @@
 exports.init = function(app) {
-  app.get('/', home); //homepage
+  app.get('/', home);
 
   app.get('/login', login)
   app.get('/signup', signup)
@@ -8,9 +8,7 @@ exports.init = function(app) {
 }
 
 function home(req, res){
-
 	res.render('home')
-
 }
 
 function login(req, res) {
