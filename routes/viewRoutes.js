@@ -5,7 +5,7 @@ exports.init = function(app) {
   app.get('/signup', signup)
   app.get('/profboard', profboard)
   app.get('/assignment', assignment)
-  app.get('/studboard'), studboard)
+  app.get('/studboard', studboard)
 
 }
 
