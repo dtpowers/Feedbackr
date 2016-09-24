@@ -2,7 +2,11 @@
 
 <div class="uk-container">
 
-	<h1>Recent Assignments</h1>
+	<h1>
+		Recent Assignments
+		<a href="#new-assignment-modal" data-uk-modal class="uk-button uk-button-primary uk-float-right">Create New Assignment</a>
+		<!-- The above button opens the modal which is included in the "create-assignment-modal" partial -->
+	</h1>
 
 	<div class="uk-grid" data-uk-grid-margin>
 
@@ -36,7 +40,6 @@
 	</div>
 
 
-
 	<h1>Past Assignments</h1>
 
 	<div class="uk-grid" data-uk-grid-margin>
@@ -53,4 +56,9 @@
 			<% } %>
 
 	</div>
+
+
+  <% include create-assignment-modal %>
+
+
 </div>
