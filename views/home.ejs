@@ -1,1 +1,154 @@
-<h3>WOW</h3>
+<% layout('layout') -%>
+
+<div class="uk-container">
+  <div class="uk-grid">
+    <div class="uk-width-1-1">
+
+      <h3>WOW</h3>
+
+      <a href="#my-id" data-uk-modal class="uk-button">...</a>
+
+      <!-- This is the modal -->
+      <div id="my-id" class="uk-modal">
+        <div class="uk-modal-dialog">
+          <a class="uk-modal-close uk-close"></a>
+          <a href="#modal2" data-uk-modal class="uk-button">Open next modal!</a>
+        </div>
+      </div>
+
+      <div id="modal2" class="uk-modal">
+        <div class="uk-modal-dialog">
+          <a class="uk-modal-close uk-close"></a>
+          Modal #2
+        </div>
+      </div>
+
+      <hr/>
+
+
+      <a href="#new-assignment-modal" data-uk-modal class="uk-button">...</a>
+
+      <div id="new-assignment-modal" class="uk-modal">
+        <div class="uk-modal-dialog">
+          <a class="uk-modal-close uk-close"></a>
+
+          <div class="uk-modal-header">
+          </div>
+
+          <form class="uk-form uk-form-stacked">
+
+            <fieldset data-uk-margin>
+              <legend>Create a new assignment</legend>
+
+              <div class="uk-grid">
+                <div class="uk-width-1-4">
+                  <label class="uk-form-label" for="course-num">Course Number</label>
+                  <div class="uk-form-control">
+                    <input id="course-num" type="text" placeholder="######">
+                  </div>
+                </div>
+
+                <div class="uk-width-3-4">
+                  <label class="uk-form-label" for="course-name">Course Name</label>
+                  <div class="uk-form-control">
+                    <input id="course-name" class="uk-width-1-1" type="text" placeholder="e.g. Innovation in Information Systems">
+                  </div>
+                </div>
+              </div>
+
+              <label class="uk-form-label" for="course-name">Course Name</label>
+              <input id="course-name" class="uk-width-1-1" type="text" placeholder="e.g. Innovation in Information Systems">
+
+              <label class="uk-form-label" for="assignment-title">Assignment Title</label>
+              <input id="assignment-title" class="uk-width-1-1" type="text" placeholder="e.g. Prototype Peer Review">
+
+              <label class="uk-form-label" for="course-num">Feedback Instructions</label>
+              <textarea class="uk-width-1-1" rows="6"></textarea>
+
+              <div class="uk-text-right">
+                <a class="uk-modal-close uk-button">Cancel</a>
+                <a class="uk-button uk-button-primary next-step">Next</a>
+              </div>
+
+            </fieldset>
+
+            <fieldset data-uk-margin style="display: none;">
+              <legend>Set feedback requirements</legend>
+
+              <label class="uk-form-label" for="assignment-title">Submission Due Date</label>
+              <div class="uk-form-icon">
+                <i class="uk-icon-calendar"></i>
+                <input type="text" data-uk-datepicker="{format:'MM/DD/YYYY'}">
+              </div>
+              <div class="uk-form-icon">
+                <i class="uk-icon-clock-o" style="z-index: 2;"></i>
+                <input type="text" data-uk-timepicker="{format:'12h'}" value="11:30 PM" style="padding-left: 30px;">
+              </div>
+
+              <label class="uk-form-label" for="assignment-title">Feedback Due Date</label>
+              <div class="uk-form-icon">
+                <i class="uk-icon-calendar"></i>
+                <input type="text" data-uk-datepicker="{format:'MM/DD/YYYY'}">
+              </div>
+              <div class="uk-form-icon">
+                <i class="uk-icon-clock-o" style="z-index: 2;"></i>
+                <input type="text" data-uk-timepicker="{format:'12h'}" value="11:30 PM" style="padding-left: 30px;">
+              </div>
+
+              <label class="uk-form-label" for="assignment-title">Required Responses</label>
+              <input type="number" class="uk-form-width-mini" value="3">
+
+              <label class="uk-form-label" for="assignment-title">Required Comments</label>
+              <input type="number" class="uk-form-width-mini" value="3">
+
+              <br/>
+              <div class="uk-text-right">
+                <a class="uk-button previous-step">Previous</a>
+                <a class="uk-button uk-button-primary next-step">Next</a>
+              </div>
+
+            </fieldset>
+
+            <fieldset data-uk-margin style="display: none;">
+              <legend>Add students to this assignment</legend>
+
+              <label class="uk-form-label" for="course-num">Student Roster</label>
+              <p class="uk-form-help-block">
+                <i class="uk-icon-question-circle uk-icon-justify"></i>
+                List all students in <mark>Name, Email</mark> format and separate with a new line
+              </p>
+              <textarea class="uk-width-1-1" rows="6"></textarea>
+
+              <div class="uk-text-right">
+                <a class="uk-button previous-step">Previous</a>
+                <a class="uk-button uk-button-primary create-assignment">Create</a>
+              </div>
+
+            </fieldset>
+
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(".next-step").click(function() {
+    var current_fs = $(this).closest("fieldset")
+    current_fs.hide()
+
+    var next_fs = current_fs.next()
+    next_fs.show()
+  });
+
+  $(".previous-step").click(function() {
+    var current_fs = $(this).closest("fieldset")
+    current_fs.hide()
+
+    var previous_fs = current_fs.prev()
+    previous_fs.show()
+  });
+</script>
