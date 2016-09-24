@@ -4,6 +4,7 @@ exports.init = function(app) {
   app.get('/login', login)
   app.get('/signup', signup)
   app.get('/profboard', profboard)
+  app.get('/assignment', assignment)
 
 }
 
@@ -21,4 +22,8 @@ function signup(req, res) {
 
 function profboard(req, res) {
   res.render('profboard')
+}
+
+function assignment(req, res) {
+  res.render('sample-assignment')
 }
