@@ -48,6 +48,14 @@ function relog() {
   register(email, pass);
  });
 
+  $("#loginSub").click(function(e){
+  e.preventDefault();
+  email = $("#email").val();
+  pass = $("#pass").val();
+  logIn(email, pass);
+  window.location.href = "profboard";
+ });
+
 //add new user to db
 //before add, ensure its not a duplicate user
 function register(email, pw) {
@@ -77,7 +85,7 @@ function register(email, pw) {
           type: 'PUT',
           success: function(result) {
             logIn(email, pw);
-            window.location.href = "dashboard";
+            window.location.href = "profboard";
           }
         });
       }
