@@ -5,7 +5,7 @@ exports.init = function(app) {
   app.get('/signup', signup)
   app.get('/profboard', profboard)
   app.get('/assignment', assignment)
-
+  app.get('/feedback', feedback)
 }
 
 function home(req, res){
@@ -26,4 +26,8 @@ function profboard(req, res) {
 
 function assignment(req, res) {
   res.render('sample-assignment')
+}
+
+function feedback(req, res) {
+  res.render('sample-feedback')
 }
