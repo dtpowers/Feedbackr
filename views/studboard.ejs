@@ -5,7 +5,7 @@
 	<h3>76-101</h3>
 	<h2>Interp Final Essay</h2>
 
-	<div class="uk-grid">
+	<div class="uk-grid before-submission">
 		<div class="uk-width-2-3 uk-container-center">
 			<h3>Your Submission</h3>
 
@@ -18,13 +18,13 @@
 
 					<div class="uk-form-file">
 						<button class="uk-button uk-button-primary">Choose a file</button>
-						<input type="file">
+						<input type="file" class="file-input">
 					</div>
 					or drag it here
 				</div>
 
 				<div class="uk-text-right">
-					<a class="uk-button uk-button-success uk-margin-small-bottom">Submit</a>
+					<a class="uk-button uk-button-success uk-margin-small-bottom submit-file">Submit</a>
 				</div>
 
 			</div>
@@ -32,7 +32,7 @@
 	</div>
 
 
-	<div class="uk-grid">
+	<div class="uk-grid after-submission" style="display: none;">
 		<div class="uk-width-2-3 uk-container-center">
 			<h3>Your Submission</h3>
 
@@ -98,3 +98,15 @@
 
 	</div>
 </div>
+
+<script>
+	$(".submit-file").click(function() {
+		$(".before-submission").hide();
+		$(".after-submission").show();
+	});
+
+
+	$(".file-input").change(function(){
+		// If we get around to it, implement something to show what file was selected
+	});
+</script>
