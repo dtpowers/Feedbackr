@@ -2,18 +2,21 @@
 var globalFiles;
 
 handleFiles = function(files){
-  console.log("reached this function");
   console.log("files are: " + files);
   globalFiles = files;
   Papa.parse(globalFiles[0], {
         header: true,
         dynamicTyping: true,
         complete: function (results) {
+        		console.log("parsed results successfully");
             data = results.data;
             $.ajax({
-				        type: "GET",
+				        type: 'GET',
+				        contentType: 'application/json',
+				        dataType: 'json',
+				        cache: 'false',
 				        url: "/dummy",
-				        data: "",
+				        data: {"email": "suvrathpen@gmail.com"},
 				        success: function() {
 				            console.log("ajax request sent");
 				        }

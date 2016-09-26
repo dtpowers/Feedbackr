@@ -14,7 +14,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
 
 exports.init = function(app) {
   app.get('/email', renderEmail);
-  app.get('/dummy', dummyEmail);
+  app.get('/dummy', sendEmail);
 }
 
 // generateFeedback = function(){
@@ -41,35 +41,41 @@ dummyEmail = function(){
 
 // var email_list = ["suvrathpen@gmail.com", "thorasgardthunder@gmail.com"]
 
-sendEmail = function(){
-  for(i = 0; i < email_list.length; i++){
-    token = generateToken(email_list[i]);
-    console.log(email_list[i] + 'is: ' + token);
-    var mailOptions = {  
-      from: 'cmufeedbackr@gmail.com', // sender address
-      to: email_list[i], // list of receivers
-      subject: 'Hello', // Subject line
-      text: 'Hello world ?', // plaintext body
-      html: '<b>Hello world ? ' + token + '</b>'  // html body
-    };
-    mongoModel.create('tokens', {'token': token, 'email': email_list[i]}, 
-    function(error, info){
-      if (error) {
-        console.log(error);
-      }
-      else {
-        console.log("collection successfully created" + info.response);
-      }
-    });
-    transporter.sendMail(mailOptions, function (error, info) {
-      //Email not sent
-      if (error) {
-        console.log(error);
-      }
-      //Yay!! Email sent
-      else {
-        console.log("email successfully sent" + info.response);
-      }
-    });
-  }
+sendEmail = function(req, res){
+  // console.log(req.params);
+  console.log("req is: " + req);
+  console.log(req.email);
+  console.log(req.params);
+  console.log("req.data is: " + req.data);
+  // email_list = req.data;
+  // for(i = 0; i < email_list.length; i++){
+  //   token = generateToken(email_list[i].email);
+  //   console.log(email_list[i].email + 'is: ' + token);
+  //   var mailOptions = {  
+  //     from: 'cmufeedbackr@gmail.com', // sender address
+  //     to: email_list[i].email, // list of receivers
+  //     subject: 'Hello', // Subject line
+  //     text: 'Hello world ?', // plaintext body
+  //     html: '<b>Hello world ? ' + token + '</b>'  // html body
+  //   };
+  //   mongoModel.create('tokens', {'token': token, 'email': email_list[i].email}, 
+  //   function(error, info){
+  //     if (error) {
+  //       console.log(error);
+  //     }
+  //     else {
+  //       console.log("collection successfully created" + info.response);
+  //     }
+  //   });
+  //   transporter.sendMail(mailOptions, function (error, info) {
+  //     //Email not sent
+  //     if (error) {
+  //       console.log(error);
+  //     }
+  //     //Yay!! Email sent
+  //     else {
+  //       console.log("email successfully sent" + info.response);
+  //     }
+  //   });
+  // }
 }
