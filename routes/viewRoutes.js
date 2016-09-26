@@ -11,7 +11,7 @@ exports.init = function(app) {
 }
 
 function home(req, res){
-	res.render('home')
+	res.render('profboard')
 }
 
 function login(req, res) {
