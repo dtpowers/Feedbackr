@@ -56,6 +56,45 @@ function relog() {
   window.location.href = "profboard";
  });
 
+$("#tokenForm").submit(function(e){
+  e.preventDefault();
+  tokenIdentify();
+
+});
+
+function tokenIdentify(){
+ 
+  tok = $("#tokenText").val();
+  getToken(tok);
+  window.location.href = "studboard";
+}
+
+function getToken(tok){
+   filter = 'find={"token":"' + tok;
+  filter += '"}';
+  $.ajax({
+    url: "/mongo/tokens/",
+    data: filter,
+    type: 'GET',
+    success: function(result) {
+      if (result[0]) {
+        Token = result[0];
+        return;
+      } else {
+         window.location.href = "studboard";
+
+        //for demonstration purposes this has been disabled
+
+        // alert("thats not a valid token!")
+      }
+
+    }
+  });
+
+
+}
+
+
 //add new user to db
 //before add, ensure its not a duplicate user
 function register(email, pw) {
