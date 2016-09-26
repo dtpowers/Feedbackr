@@ -70,7 +70,6 @@ function register(email, pw) {
   filter = 'find={"email":"' + email;
   filter += '"}';
   $.ajax({
-    
     url: "/mongo/users/",
     data: filter,
     type: 'GET',
