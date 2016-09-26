@@ -10,10 +10,15 @@ exports.init = function(app) {
   app.get('/assignment', assignment)
   app.get('/feedback', feedback)
   app.get('/studboard', studboard)
+  app.get('/token', token)
 }
 
 function home(req, res){
 	res.render('profboard')
+}
+
+function token(req, res){
+  res.render('token')
 }
 
 function login(req, res) {
