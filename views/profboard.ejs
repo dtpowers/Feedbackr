@@ -6,7 +6,7 @@
 	<!-- http://stackoverflow.com/questions/13136194/place-button-group-at-the-far-right-side-of-a-header-with-bootstrap -->
 	<h1>
 		Recent Assignments
-		<a href="#new-assignment-modal" data-uk-modal class="uk-button uk-button-primary uk-float-right">Create New Assignment</a>
+		<a href="#new-assignment-modal" data-uk-modal class="uk-button uk-button-primary uk-button-large uk-float-right">Create New Assignment</a>
 		<!-- The above button opens the modal which is included in the "create-assignment-modal" partial -->
 	</h1>
 
@@ -20,8 +20,8 @@
 							<h2>76-101</h2>
 						</div>
 						<div class="uk-width-3-6">
-							<h3>Interp Final Essay Review</h3>
-							<p>
+							<h3 class="uk-margin-bottom-remove">Interp Final Essay Review</h3>
+							<p class="uk-margin-top-remove">
 								Submission due September 10 at 11:59 pm. <br/>
 								Feedback due September 12 at 11:59 pm.
 							</p>
@@ -41,6 +41,7 @@
 
 	</div>
 
+	<hr class="uk-margin-large-top" />
 
 	<h1>Past Assignments</h1>
 
@@ -49,9 +50,11 @@
 		<% for(var i = 0; i < 5; i++) { %>
 			<div class="uk-width-1-3">
 				<div class="uk-panel uk-panel-box">
-					<h2 class="uk-h3">67-272</h2>
+					<h2 class="uk-h4 uk-margin-bottom-remove">67-272</h2>
+					<h3 class="uk-margin-top-remove">Final Project Peer Review:</h3>
 					<p>
-						Final Project Peer Review: Due September 10 at 11:59 pm. Feedback by September 12 at 11:59.
+						Due September 10 at 11:59 pm. <br/>
+						Feedback by September 12 at 11:59.
 					</p>
 				</div>
 			</div>
