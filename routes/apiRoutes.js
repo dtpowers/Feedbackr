@@ -17,9 +17,6 @@ exports.init = function(app) {
   app.get('/dummy', sendEmail);
 }
 
-// generateFeedback = function(){
-
-// }
 
 generateToken = function(s){
   token = crypto.createHash('md5').update(s).digest('hex');
@@ -35,47 +32,38 @@ handleFiles = function(file){
   console.log(file);
 }
 
-dummyEmail = function(){
-  console.log("reached dummyEmail function");
-}
 
-// var email_list = ["suvrathpen@gmail.com", "thorasgardthunder@gmail.com"]
+//var email_list = ["suvrathpen@gmail.com", "thorasgardthunder@gmail.com"]
 
-sendEmail = function(req, res){
-  // console.log(req.params);
-  console.log("req is: " + req);
-  console.log(req.email);
-  console.log(req.params);
-  console.log("req.data is: " + req.data);
-  // email_list = req.data;
-  // for(i = 0; i < email_list.length; i++){
-  //   token = generateToken(email_list[i].email);
-  //   console.log(email_list[i].email + 'is: ' + token);
-  //   var mailOptions = {  
-  //     from: 'cmufeedbackr@gmail.com', // sender address
-  //     to: email_list[i].email, // list of receivers
-  //     subject: 'Hello', // Subject line
-  //     text: 'Hello world ?', // plaintext body
-  //     html: '<b>Hello world ? ' + token + '</b>'  // html body
-  //   };
-  //   mongoModel.create('tokens', {'token': token, 'email': email_list[i].email}, 
-  //   function(error, info){
-  //     if (error) {
-  //       console.log(error);
-  //     }
-  //     else {
-  //       console.log("collection successfully created" + info.response);
-  //     }
-  //   });
-  //   transporter.sendMail(mailOptions, function (error, info) {
-  //     //Email not sent
-  //     if (error) {
-  //       console.log(error);
-  //     }
-  //     //Yay!! Email sent
-  //     else {
-  //       console.log("email successfully sent" + info.response);
-  //     }
-  //   });
-  // }
+sendEmail = function(email_list){
+  for(i = 0; i < email_list.length; i++){
+    token = generateToken(email_list[i].email);
+    console.log(email_list[i].email + 'is: ' + token);
+    var mailOptions = {  
+      from: 'cmufeedbackr@gmail.com', // sender address
+      to: email_list[i].email, // list of receivers
+      subject: 'Hello from FeedbackR', // Subject line
+      text: 'Hello from FeedbackR', // plaintext body
+      html: '<b>Hello User. This is your token to log on the site:' + token + '</b>'  // html body
+    };
+    mongoModel.create('tokens', {'token': token, 'email': email_list[i].email}, 
+    function(error, info){
+      if (error) {
+        console.log(error);
+      }
+      else {
+        console.log("collection successfully created" + info.response);
+      }
+    });
+    transporter.sendMail(mailOptions, function (error, info) {
+      //Email not sent
+      if (error) {
+        console.log(error);
+      }
+      //Yay!! Email sent
+      else {
+        console.log("email successfully sent" + info.response);
+      }
+    });
+  }
 }
