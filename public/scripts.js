@@ -62,6 +62,11 @@ $("#tokenForm").submit(function(e){
 
 });
 
+$(".assigned").click(function(){
+  window.location.href = "feedback"
+
+});
+
 function tokenIdentify(){
  
   tok = $("#tokenText").val();
