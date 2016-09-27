@@ -66,7 +66,9 @@ $(".assigned").click(function(){
   window.location.href = "feedback"
 
 });
-
+$(".profAssignment").click(function(){
+  window.location.href = "assignment"
+});
 function tokenIdentify(){
  
   tok = $("#tokenText").val();
