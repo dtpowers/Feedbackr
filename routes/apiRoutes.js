@@ -46,7 +46,8 @@ sendEmail = function(email_list){
       to: email_list[i], // list of receivers
       subject: 'Hello from FeedbackR', // Subject line
       text: 'Hello from FeedbackR', // plaintext body
-      html: '<b>Hello User. This is your token to log on the site:' + token + '</b>'  // html body
+      html: '<p>Hello User. This is your token to log on to the site:' + token + '</p>' 
+             + '<br>' + '<p>Please <a href="http://localhost:3000/studboard/">click here</a> to access student dashboard</p>'// html body
     };
     mongoModel.create('tokens', {'token': token, 'email': email_list[i].email}, 
     function(error, info){
