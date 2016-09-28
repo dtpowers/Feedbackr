@@ -13,8 +13,7 @@ var transporter = nodemailer.createTransport(smtpTransport({
   }));
 
 exports.init = function(app) {
-  app.get('/email', renderEmail);
-  app.get('/dummy', sendEmail);
+  app.post('/email', setEmail);
 }
 
 
@@ -23,24 +22,28 @@ generateToken = function(s){
   return token;
 }
 
-renderEmail = function(req, res){
-  res.render('email');
-}
 
 handleFiles = function(file){
   console.log("reached this function");
   console.log(file);
 }
 
+setEmail = function(req, res){
+  var data = req.body;
+  var email = data.email;
+  sendEmail([email]);
+  res.send("success");
+}
+
 //var email_list = ["suvrathpen@gmail.com", "thorasgardthunder@gmail.com"]
 
 sendEmail = function(email_list){
   for(i = 0; i < email_list.length; i++){
-    token = generateToken(email_list[i].email);
-    console.log(email_list[i].email + 'is: ' + token);
+    token = generateToken(email_list[i]);
+    console.log(email_list[i] + 'is: ' + token);
     var mailOptions = {  
       from: 'cmufeedbackr@gmail.com', // sender address
-      to: email_list[i].email, // list of receivers
+      to: email_list[i], // list of receivers
       subject: 'Hello from FeedbackR', // Subject line
       text: 'Hello from FeedbackR', // plaintext body
       html: '<b>Hello User. This is your token to log on the site:' + token + '</b>'  // html body

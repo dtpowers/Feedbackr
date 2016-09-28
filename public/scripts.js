@@ -69,6 +69,19 @@ $("#button").click(function(){
   textInput = textInput.split(',');
   emails = textInput[1].trim();
   console.log(emails);
+  $.ajax({
+    type: 'POST',
+    url: "/email",
+    data: {
+      email : emails
+    },
+    success: function(res) {
+      console.log(res);
+    },
+    error: function(err){
+      console.log(err);
+    }
+  });
 });
 
 $(".assigned").click(function(){
