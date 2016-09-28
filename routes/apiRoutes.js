@@ -47,7 +47,7 @@ sendEmail = function(email_list) {
       subject: 'Hello from FeedbackR', // Subject line
       text: 'Hello from FeedbackR', // plaintext body
       html: '<p>Hello User. This is your token to log on to the site:' + token + '</p>' +
-        '<br>' + '<p>Please <a href="https://feedbackr475.herokuapp.com/stuboard">click here</a> to access student dashboard</p>' // html body
+        '<br>' + '<p>Please <a href="https://feedbackr475.herokuapp.com/studboard">click here</a> to access student dashboard</p>' // html body
     };
     mongoModel.create('tokens', {
         'token': token,
