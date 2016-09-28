@@ -4,8 +4,8 @@
   <div class="uk-modal-dialog">
     <a class="uk-modal-close uk-close"></a>
 
-    <div class="uk-modal-header">
-    </div>
+<!--     <div class="uk-modal-header">
+    </div> -->
 
     <form class="uk-form uk-form-stacked">
 
@@ -16,26 +16,23 @@
           <div class="uk-width-1-4">
             <label class="uk-form-label" for="course-num">Course Number</label>
             <div class="uk-form-control">
-              <input id="course-num" type="text" placeholder="######">
+              <input id="course-num" type="text" placeholder="######" value="67475">
             </div>
           </div>
 
           <div class="uk-width-3-4">
             <label class="uk-form-label" for="course-name">Course Name</label>
             <div class="uk-form-control">
-              <input id="course-name" class="uk-width-1-1" type="text" placeholder="e.g. Innovation in Information Systems">
+              <input id="course-name" class="uk-width-1-1" type="text" placeholder="e.g. Innovation in Information Systems" value="Innovation in Information Systems">
             </div>
           </div>
         </div>
 
-        <label class="uk-form-label" for="course-name">Course Name</label>
-        <input id="course-name" class="uk-width-1-1" type="text" placeholder="e.g. Innovation in Information Systems">
-
         <label class="uk-form-label" for="assignment-title">Assignment Title</label>
-        <input id="assignment-title" class="uk-width-1-1" type="text" placeholder="e.g. Prototype Peer Review">
+        <input id="assignment-title" class="uk-width-1-1" type="text" placeholder="e.g. Prototype Peer Review" value="Prototype Peer Review">
 
         <label class="uk-form-label" for="course-num">Feedback Instructions</label>
-        <textarea class="uk-width-1-1" rows="6"></textarea>
+        <textarea class="uk-width-1-1 uk-margin-bottom" rows="6">Spend time reviewing other groups' prototypes now that we're halfway through our first cycle. Some things to keep in mind are user experience, technological feasibility, and problem solving.</textarea>
 
         <div class="uk-text-right">
           <a class="uk-modal-close uk-button">Cancel</a>
@@ -50,7 +47,7 @@
         <label class="uk-form-label" for="assignment-title">Submission Due Date</label>
         <div class="uk-form-icon">
           <i class="uk-icon-calendar"></i>
-          <input type="text" data-uk-datepicker="{format:'MM/DD/YYYY'}">
+          <input type="text" data-uk-datepicker="{format:'MM/DD/YYYY'}" value="10/02/2016">
         </div>
         <div class="uk-form-icon">
           <i class="uk-icon-clock-o" style="z-index: 2;"></i>
@@ -60,7 +57,7 @@
         <label class="uk-form-label" for="assignment-title">Feedback Due Date</label>
         <div class="uk-form-icon">
           <i class="uk-icon-calendar"></i>
-          <input type="text" data-uk-datepicker="{format:'MM/DD/YYYY'}">
+          <input type="text" data-uk-datepicker="{format:'MM/DD/YYYY'}" value="10/05/2016">
         </div>
         <div class="uk-form-icon">
           <i class="uk-icon-clock-o" style="z-index: 2;"></i>
@@ -68,10 +65,10 @@
         </div>
 
         <label class="uk-form-label" for="assignment-title">Required Responses</label>
-        <input type="number" class="uk-form-width-mini" value="3">
+        <input type="number" class="uk-form-width-mini" value="2">
 
         <label class="uk-form-label" for="assignment-title">Required Comments</label>
-        <input type="number" class="uk-form-width-mini" value="3">
+        <input type="number" class="uk-form-width-mini" value="2">
 
         <br/>
         <div class="uk-text-right">
@@ -89,11 +86,11 @@
           <i class="uk-icon-question-circle uk-icon-justify"></i>
           List all students in <mark>Name, Email</mark> format and separate with a new line
         </p>
-        <textarea class="uk-width-1-1" rows="6"></textarea>
+        <textarea class="uk-width-1-1 uk-margin-bottom" rows="6">Suvrath Penmetcha, spenmetc@andrew.cmu.edu</textarea>
 
         <div class="uk-text-right">
           <a class="uk-button previous-step">Previous</a>
-          <a class="uk-button uk-button-primary create-assignment">Create</a>
+          <a class="uk-button uk-button-primary create-assignment uk-modal-close">Create</a>
         </div>
 
       </fieldset>
