@@ -1545,7 +1545,7 @@ iframe {
  * Secondary
  */
 .uk-block-secondary {
-  background: #222;
+  background: #992100;
 }
 /*
      * Adjust padding between equal colored blocks
@@ -1849,7 +1849,7 @@ ul.uk-nav-sub {
 }
 /* Active */
 .uk-nav-side > li.uk-active > a {
-  background: #279ed6;
+  background: #00a8e6;
   color: #fff;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
@@ -1891,7 +1891,7 @@ ul.uk-nav-sub {
  */
 .uk-nav-dropdown > li > a:hover,
 .uk-nav-dropdown > li > a:focus {
-  background: #279ed6;
+  background: #00a8e6;
   color: #fff;
   /* 2 */
   outline: none;
@@ -1934,7 +1934,7 @@ ul.uk-nav-sub {
  */
 .uk-nav-navbar > li > a:hover,
 .uk-nav-navbar > li > a:focus {
-  background: #279ed6;
+  background: #00a8e6;
   color: #fff;
   /* 2 */
   outline: none;
@@ -2046,8 +2046,8 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
    Component: Navbar
  ========================================================================== */
 .uk-navbar {
-  background: #0095DB;
-  color: #444;
+  background: #FF5224;
+  color: #fafafa;
   border: 1px solid rgba(0, 0, 0, 0.06);
   border-radius: 4px;
 }
@@ -2087,19 +2087,19 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
   box-sizing: border-box;
   text-decoration: none;
   /* 1 */
-  height: 41px;
-  padding: 0 15px;
-  line-height: 40px;
+  height: 46px;
+  padding: 0 25px;
+  line-height: 45px;
   /* 2 */
-  color: #444;
+  color: #fafafa;
   font-size: 14px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Istok Web';
   font-weight: normal;
   margin-top: -1px;
   margin-left: -1px;
   border: 1px solid transparent;
   border-bottom-width: 0;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 /* Appear not as link */
 .uk-navbar-nav > li > a[href='#'] {
@@ -2114,8 +2114,8 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-navbar-nav > li:hover > a,
 .uk-navbar-nav > li > a:focus,
 .uk-navbar-nav > li.uk-open > a {
-  background-color: #fafafa;
-  color: #444;
+  background-color: #EA3100;
+  color: #fafafa;
   /* 3 */
   outline: none;
   position: relative;
@@ -2134,8 +2134,8 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 }
 /* Active */
 .uk-navbar-nav > li.uk-active > a {
-  background-color: #fafafa;
-  color: #444;
+  background-color: #EA3100;
+  color: #fafafa;
   border-left-color: rgba(0, 0, 0, 0.1);
   border-right-color: rgba(0, 0, 0, 0.1);
   border-top-color: rgba(0, 0, 0, 0.1);
@@ -2143,10 +2143,10 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 /* Sub-objects: `uk-navbar-nav-subtitle`
  ========================================================================== */
 .uk-navbar-nav .uk-navbar-nav-subtitle {
-  line-height: 28px;
+  line-height: 33px;
 }
 .uk-navbar-nav-subtitle > div {
-  margin-top: -6px;
+  margin-top: -8.5px;
   font-size: 10px;
   line-height: 12px;
 }
@@ -2160,11 +2160,11 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
 .uk-navbar-toggle {
   box-sizing: border-box;
   display: block;
-  height: 41px;
-  padding: 0 15px;
+  height: 46px;
+  padding: 0 25px;
   float: left;
   margin-top: -1px;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
 }
 /*
  * Helper to center all child elements vertically
@@ -2189,16 +2189,16 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
  * Link colors
  */
 .uk-navbar-content > a:not([class]) {
-  color: #07D;
+  color: #fafafa;
 }
 .uk-navbar-content > a:not([class]):hover {
-  color: #059;
+  color: #EA3100;
 }
 /* Sub-objects: `uk-navbar-brand`
  ========================================================================== */
 .uk-navbar-brand {
   font-size: 18px;
-  color: #444;
+  color: #fff;
   text-decoration: none;
 }
 /*
@@ -2207,7 +2207,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
  */
 .uk-navbar-brand:hover,
 .uk-navbar-brand:focus {
-  color: #444;
+  color: #fff;
   text-decoration: none;
   /* 2 */
   outline: none;
@@ -2407,7 +2407,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
  * `li` needed for higher specificity to override hover
  */
 .uk-subnav-pill > .uk-active > * {
-  background: #279ed6;
+  background: #00a8e6;
   color: #fff;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
 }
@@ -2552,7 +2552,7 @@ html:not(.uk-touch) .uk-nav-offcanvas ul a:hover {
  * Active
  */
 .uk-pagination > .uk-active > span {
-  background: #279ed6;
+  background: #00a8e6;
   color: #fff;
   border-color: transparent;
   box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
@@ -3695,7 +3695,7 @@ select.uk-form-width-mini {
  * Modifier: `uk-button-primary`
  */
 .uk-button-primary {
-  background-color: #279ed6;
+  background-color: #00a8e6;
   color: #fff;
 }
 /* Hover */
@@ -3714,7 +3714,7 @@ select.uk-form-width-mini {
  * Modifier: `uk-button-success`
  */
 .uk-button-success {
-  background-color: #66ca3a;
+  background-color: #8cc14c;
   color: #fff;
 }
 /* Hover */
@@ -3733,7 +3733,7 @@ select.uk-form-width-mini {
  * Modifier: `uk-button-danger`
  */
 .uk-button-danger {
-  background-color: #d9485e;
+  background-color: #da314b;
   color: #fff;
 }
 /* Hover */
@@ -6104,7 +6104,7 @@ select.uk-form-width-mini {
 .uk-badge {
   display: inline-block;
   padding: 0 5px;
-  background: #279ed6;
+  background: #00a8e6;
   font-size: 10px;
   font-weight: bold;
   line-height: 14px;
@@ -6137,7 +6137,7 @@ a.uk-badge:hover {
  * Modifier: `uk-badge-success`
  */
 .uk-badge-success {
-  background-color: #66ca3a;
+  background-color: #8cc14c;
 }
 /*
  * Modifier: `uk-badge-warning`
@@ -6149,7 +6149,7 @@ a.uk-badge:hover {
  * Modifier: `uk-badge-danger`
  */
 .uk-badge-danger {
-  background-color: #d9485e;
+  background-color: #da314b;
 }
 /* ========================================================================
    Component: Alert
@@ -7624,7 +7624,7 @@ a.uk-thumbnail:focus {
   max-width: 100%;
   max-width: calc(100% - 20px);
   /* 3 */
-  background: #f3f3f3;
+  background: #fafafa;
   /* 4 */
   opacity: 0;
   -webkit-transform: translateY(-100px);
@@ -9011,7 +9011,7 @@ a.uk-thumbnail:focus {
   color: #444;
 }
 .uk-contrast .uk-button-primary {
-  background-color: #279ed6;
+  background-color: #00a8e6;
   color: #fff;
 }
 .uk-contrast .uk-button-primary:hover,
