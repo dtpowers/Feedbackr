@@ -1,7 +1,11 @@
 //include the mongo model
 var mongoModel = require('../models/mongoModel.js')
+var nodemailer = require('nodemailer')
+var smtpTransport = require('nodemailer-smtp-transport');
+var crypto = require('crypto');
 
 exports.init = function(app) {
+
   app.get('/mongo/:collection', doRead); // CRUD Retrieve
 
   app.put('/mongo/:collection', doCreate); // CRUD Create

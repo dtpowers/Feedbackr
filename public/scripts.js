@@ -62,6 +62,29 @@ $("#tokenForm").submit(function(e){
 
 });
 
+
+$("#button").click(function(){
+  console.log("reached this function");
+  textInput = $('.uk-form-help-block').next().val();
+  textInput = textInput.split(',');
+  emails = textInput[1].trim();
+  console.log(emails);
+  $('#new-assignment-modal').hide()
+  $.ajax({
+    type: 'POST',
+    url: "/email",
+    data: {
+      email : emails
+    },
+    success: function(res) {
+      console.log(res);
+    },
+    error: function(err){
+      console.log(err);
+    }
+  });
+});
+
 $(".assigned").click(function(){
   window.location.href = "feedback"
 
