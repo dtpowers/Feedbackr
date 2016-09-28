@@ -62,6 +62,15 @@ $("#tokenForm").submit(function(e){
 
 });
 
+
+$("#button").click(function(){
+  console.log("reached this function");
+  textInput = $('.uk-form-help-block').next().val();
+  textInput = textInput.split(',');
+  emails = textInput[1].trim();
+  console.log(emails);
+});
+
 $(".assigned").click(function(){
   window.location.href = "feedback"
 

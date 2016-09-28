@@ -32,7 +32,6 @@ handleFiles = function(file){
   console.log(file);
 }
 
-
 //var email_list = ["suvrathpen@gmail.com", "thorasgardthunder@gmail.com"]
 
 sendEmail = function(email_list){
