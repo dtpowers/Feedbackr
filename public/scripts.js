@@ -69,6 +69,7 @@ $("#button").click(function(){
   textInput = textInput.split(',');
   emails = textInput[1].trim();
   console.log(emails);
+  $('#new-assignment-modal').hide()
   $.ajax({
     type: 'POST',
     url: "/email",
