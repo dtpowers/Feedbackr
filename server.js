@@ -17,11 +17,13 @@ app.set('view engine', 'ejs');
 // Define how to log events
 app.use(morgan('dev'));
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
 
 // parse application/json
 app.use(bodyParser.json())
-// Handle static files
+  // Handle static files
 app.use(express.static(__dirname + '/public'));
 
 
@@ -42,8 +44,8 @@ app.use(function(req, res) {
     'message': message
   });
 });
+var port = process.env.PORT || 8080;
 
-
-app.listen(3000, function() {
+app.listen(port, function() {
   console.log('If you are reading this our code at least kind of works!');
 });
