@@ -1,0 +1,124 @@
+<% layout('layout') -%>
+
+<div class="uk-container uk-container-center">
+
+  <h2 class="uk-margin-bottom-remove">76-101</h2>
+  <h1 class="uk-margin-top-remove">Interp Final Essay</h1>
+
+  <div class="uk-grid">
+    <div class="uk-width-3-10">
+      <div class="uk-panel uk-panel-box">
+        <h3>Assignment Settings</h3>
+
+        <dl class="uk-description-list-line">
+          <dt>Submission Due Date</dt>
+          <dd>4/1/16</dd>
+
+          <dt>Review Due Date</dt>
+          <dd>4/6/16</dd>
+
+          <dt>Required Responses</dt>
+          <dd>4</dd>
+
+          <dt>Required Comments</dt>
+          <dd>4</dd>
+
+          <dt>Feedback Instructions</dt>
+          <dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu purus lorem. Sed dignissim metus ultrices ipsum porttitor vulputate. Morbi tristique risus ac urna varius, non pretium ipsum placerat. Proin malesuada erat in velit accumsan, vel sagittis purus viverra. Cras auctor erat aliquet tincidunt pulvinar. Nunc sed metus elit. Donec sodales suscipit nibh, in tincidunt urna faucibus vitae. Cras vestibulum fermentum nisi, quis porttitor nisl tempus nec.
+        </dl>
+      </div>
+    </div>
+
+    <div class="uk-width-7-10">
+      <div class="uk-grid">
+
+        <div class="uk-width-1-3">
+          <div class="uk-panel uk-panel-box uk-text-center">
+            <h2>8/10</h2>
+            <p>Assignments Submitted</p>
+          </div>
+        </div>
+
+        <div class="uk-width-1-3">
+          <div class="uk-panel uk-panel-box uk-text-center">
+            <h2>7/10</h2>
+            <p>Responses Completed</p>
+          </div>
+        </div>
+
+        <div class="uk-width-1-3">
+          <div class="uk-panel uk-panel-box uk-text-center">
+            <h2>4/10</h2>
+            <p>Comments Completed</p>
+          </div>
+        </div>
+
+        <div class="uk-width-1-1">
+          <table class="uk-table uk-table-middle uk-table-striped uk-table-hover uk-margin-large-top">
+            <thead>
+              <tr>
+                <th class="uk-width-4-10">Student</td>
+                <th class="uk-width-1-10">Submission</td>
+                <th class="uk-width-2-10">On Time?</td>
+                <th class="uk-width-1-10">Responses</td>
+                <th class="uk-width-1-10">Comments</td>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <% for(var i = 0; i < 8; i++) { %>
+                <tr>
+                  <td>
+                    Jenee Rabe <br/>
+                    <span class="uk-text-small uk-text-muted">jrabe@andrew.cmu.edu</span>
+                  </td>
+                  <td class="uk-text-center">
+                    <a href="feedback"><i class="uk-icon-link"></i></a>
+                  </td>
+                  <td></td>
+
+                  <td class="uk-text-right">
+                    <div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
+                      <button class="uk-button uk-button-link">4</button>
+
+                      <div class="uk-dropdown">
+                        <ul class="uk-nav uk-nav-dropdown uk-text-left">
+                          <li class="uk-nav-header">Responded To</li>
+                          <li><a>Alex Wang</a></li>
+                          <li><a>Yuto Takamoto</a></li>
+                          <li><a>Kevin Shi</a></li>
+                          <li><a>Patrick Nguyen</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+
+                  <td class="uk-text-right">
+                    <div class="uk-button-dropdown" data-uk-dropdown="{mode:'click'}">
+                      <button class="uk-button uk-button-link">4</button>
+
+                      <div class="uk-dropdown">
+                        <ul class="uk-nav uk-nav-dropdown uk-text-left">
+                          <li class="uk-nav-header">Commented On Response</li>
+                          <li><a>Alex Wang</a></li>
+                          <li><a>Yuto Takamoto</a></li>
+                          <li><a>Kevin Shi</a></li>
+                          <li><a>Patrick Nguyen</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+
+                </tr>
+              <% } %>
+
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>

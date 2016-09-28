@@ -48,6 +48,60 @@ function relog() {
   register(email, pass);
  });
 
+  $("#loginSub").click(function(e){
+  e.preventDefault();
+  email = $("#email").val();
+  pass = $("#pass").val();
+  logIn(email, pass);
+  window.location.href = "profboard";
+ });
+
+$("#tokenForm").submit(function(e){
+  e.preventDefault();
+  tokenIdentify();
+
+});
+
+$(".assigned").click(function(){
+  window.location.href = "feedback"
+
+});
+$(".profAssignment").click(function(){
+  window.location.href = "assignment"
+});
+function tokenIdentify(){
+ 
+  tok = $("#tokenText").val();
+  getToken(tok);
+  window.location.href = "studboard";
+}
+
+function getToken(tok){
+   filter = 'find={"token":"' + tok;
+  filter += '"}';
+  $.ajax({
+    url: "/mongo/tokens/",
+    data: filter,
+    type: 'GET',
+    success: function(result) {
+      if (result[0]) {
+        Token = result[0];
+        return;
+      } else {
+         window.location.href = "studboard";
+
+        //for demonstration purposes this has been disabled
+
+        // alert("thats not a valid token!")
+      }
+
+    }
+  });
+
+
+}
+
+
 //add new user to db
 //before add, ensure its not a duplicate user
 function register(email, pw) {
@@ -62,7 +116,6 @@ function register(email, pw) {
   filter = 'find={"email":"' + email;
   filter += '"}';
   $.ajax({
-    
     url: "/mongo/users/",
     data: filter,
     type: 'GET',
@@ -77,7 +130,7 @@ function register(email, pw) {
           type: 'PUT',
           success: function(result) {
             logIn(email, pw);
-            window.location.href = "dashboard";
+            window.location.href = "profboard";
           }
         });
       }
